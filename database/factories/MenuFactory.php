@@ -23,8 +23,6 @@ class MenuFactory extends Factory
     {
         return [
             'title' => $this->faker->word,
-        'menuable_type' => $this->faker->word,
-        'menuable_id' => $this->faker->randomDigitNotNull,
         'created_at' => $this->faker->date('Y-m-d H:i:s'),
         'updated_at' => $this->faker->date('Y-m-d H:i:s')
         ];

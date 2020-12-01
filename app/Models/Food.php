@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 /**
  * Class Food
  * @package App\Models
- * @version November 29, 2020, 2:06 pm UTC
+ * @version November 29, 2020, 7:13 pm UTC
  *
  * @property string $title
  * @property string $slug
@@ -17,7 +17,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string $description
  * @property string $status
  * @property integer $restaurant_id
- * @property integer $price
  */
 class Food extends Model
 {
@@ -38,8 +37,7 @@ class Food extends Model
         'image',
         'description',
         'status',
-        'restaurant_id',
-        'price'
+        'restaurant_id'
     ];
 
     /**
@@ -54,8 +52,7 @@ class Food extends Model
         'image' => 'string',
         'description' => 'string',
         'status' => 'string',
-        'restaurant_id' => 'integer',
-        'price' => 'integer'
+        'restaurant_id' => 'integer'
     ];
 
     /**
@@ -65,12 +62,8 @@ class Food extends Model
      */
     public static $rules = [
         'title' => 'required',
-        'slug' => 'required',
-        'image' => 'required',
         'description' => 'required',
-        'status' => 'required',
-        'restaurant_id' => 'required',
-        'price' => 'required'
+        'restaurant_id' => 'required'
     ];
 
     

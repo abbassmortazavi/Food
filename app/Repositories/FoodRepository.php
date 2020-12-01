@@ -8,7 +8,7 @@ use App\Repositories\BaseRepository;
 /**
  * Class FoodRepository
  * @package App\Repositories
- * @version November 29, 2020, 2:06 pm UTC
+ * @version November 29, 2020, 7:13 pm UTC
 */
 
 class FoodRepository extends BaseRepository
@@ -22,8 +22,7 @@ class FoodRepository extends BaseRepository
         'image',
         'description',
         'status',
-        'restaurant_id',
-        'price'
+        'restaurant_id'
     ];
 
     /**

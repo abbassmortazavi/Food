@@ -8,7 +8,7 @@ use App\Repositories\BaseRepository;
 /**
  * Class MenuRepository
  * @package App\Repositories
- * @version November 29, 2020, 2:59 pm UTC
+ * @version November 30, 2020, 5:08 pm UTC
 */
 
 class MenuRepository extends BaseRepository
@@ -17,9 +17,7 @@ class MenuRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        'title',
-        'menuable_type',
-        'menuable_id'
+        'title'
     ];
 
     /**

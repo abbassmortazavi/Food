@@ -7,19 +7,19 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
- * Class Menu
+ * Class Test
  * @package App\Models
- * @version November 30, 2020, 5:08 pm UTC
+ * @version November 29, 2020, 5:15 pm UTC
  *
  * @property string $title
  */
-class Menu extends Model
+class Test extends Model
 {
     use SoftDeletes;
 
     use HasFactory;
 
-    public $table = 'menus';
+    public $table = 'tests';
     
 
     protected $dates = ['deleted_at'];

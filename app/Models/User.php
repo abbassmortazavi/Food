@@ -2,42 +2,62 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Eloquent as Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+/**
+ * Class User
+ * @package App\Models
+ * @version November 29, 2020, 6:56 pm UTC
+ *
+ * @property string $name
+ * @property string $email
+ * @property string $password
+ */
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use SoftDeletes;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
+    use HasFactory;
+
+    public $table = 'users';
+    
+
+    protected $dates = ['deleted_at'];
+
+
+
+    public $fillable = [
         'name',
         'email',
-        'password',
+        'password'
     ];
 
     /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
-    /**
-     * The attributes that should be cast to native types.
+     * The attributes that should be casted to native types.
      *
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'id' => 'integer',
+        'name' => 'string',
+        'email' => 'string',
+        'password' => 'string'
     ];
+
+    /**
+     * Validation rules
+     *
+     * @var array
+     */
+    public static $rules = [
+        'name' => 'required',
+        'email' => 'required|unique:users',
+        'password' => 'required|min:3'
+    ];
+
+    
 }

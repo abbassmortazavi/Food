@@ -28,7 +28,6 @@ class FoodFactory extends Factory
         'description' => $this->faker->text,
         'status' => $this->faker->word,
         'restaurant_id' => $this->faker->randomDigitNotNull,
-        'price' => $this->faker->randomDigitNotNull,
         'created_at' => $this->faker->date('Y-m-d H:i:s'),
         'updated_at' => $this->faker->date('Y-m-d H:i:s')
         ];
